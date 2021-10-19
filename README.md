@@ -1,4 +1,4 @@
-# Dpwnload artifact from latest build in pipleine
+# Download artifact from latest build in pipleine
 ```
 $buildId = az  pipelines build list --org https://dev.azure.com/company-name/ --project project-name --definition-ids 'id if pipeline' --status completed --query "[?contains(buildNumber, 'Name of the build')].[id]|[0]" --output tsv
 az pipelines runs artifact download --org https://dev.azure.com/company-name/ --project project-name --run-id $buildId --artifact-name deploy-output --path ./
