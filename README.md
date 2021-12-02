@@ -1,3 +1,7 @@
+# Create Wiki page
+```
+az devops wiki page create --org https://dev.azure.com/blazerua/ --project CI --path 'Home/test' --wiki CI.wiki --content "Hello World"
+```
 # Download artifact from latest build in pipleine
 ```
 $buildId = az  pipelines build list --org https://dev.azure.com/company-name/ --project project-name --definition-ids 'id if pipeline' --status completed --query "[?contains(buildNumber, 'Name of the build')].[id]|[0]" --output tsv
