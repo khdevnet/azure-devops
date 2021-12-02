@@ -1,6 +1,7 @@
-# Create Wiki page
+# Create Wiki page from PR description
 ```
-az devops wiki page create --org https://dev.azure.com/blazerua/ --project CI --path 'Home/test' --wiki CI.wiki --content "Hello World"
+az repos pr show --org https://dev.azure.com/blazerua/ --id 1 --query "[description][0]" --output tsv | Out-File -FilePath .\55.md
+az devops wiki page create --org https://dev.azure.com/blazerua/ --project CI --path 'Home/56' --wiki CI.wiki --file-path .\55.md --encoding utf-16le
 ```
 # Download artifact from latest build in pipleine
 ```
